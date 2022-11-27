@@ -1,0 +1,19 @@
+//使用proto3语法
+syntax = "proto3";
+//生成多个类
+option java_multiple_files = false;
+//生成Java类所在的包
+option java_package = "edu.zcs.news.proto";
+//生成外层类类名
+option java_outer_classname = "NewsProto";
+//.proto包名
+package news;
+service NewsService{
+    rpc hello(StringRequest) returns (StringReponse) {}
+}
+message StringRequest{
+    string name =1;
+}
+message StringReponse{
+    string result =1;
+}
